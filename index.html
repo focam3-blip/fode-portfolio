@@ -2,33 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Fode Camara | Portfolio</title>
+  <title>Fode Camara | Finance & Market Analyst</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <style>
     :root {
-      --black: #000000;
-      --bg: #050505;
-      --card: #0d0d0d;
-      --gold: #d4af37;
-      --text-main: #ffffff;
-      --text-muted: #cccccc;
-      --border: #1a1a1a;
+      --bg: #020617;             /* deep navy */
+      --bg-elevated: #020b19;
+      --card: #020e20;
+      --accent: #22c55e;         /* stock green */
+      --accent-soft: rgba(34,197,94,0.16);
+      --border: #0b1727;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --chip-bg: #020617;
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: "Inter", system-ui, sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
     }
 
     body {
-      background: var(--black);
+      background: radial-gradient(circle at top, #031525 0, #020617 45%, #000 100%);
       min-height: 100vh;
       display: flex;
       justify-content: center;
-      padding: 40px 20px;
+      padding: 40px 16px;
       color: var(--text-main);
     }
 
@@ -36,174 +39,217 @@
       width: 100%;
       max-width: 1200px;
       display: grid;
-      grid-template-columns: 330px 1fr;
-      gap: 30px;
+      grid-template-columns: 340px 1fr;
+      gap: 28px;
     }
 
     /* LEFT PROFILE CARD */
+
     .profile-card {
-      background: var(--card);
-      border-radius: 20px;
+      background: linear-gradient(145deg, #020c19, #020617);
+      border-radius: 24px;
       padding: 24px;
       border: 1px solid var(--border);
-      box-shadow: 0 0 25px rgba(212,175,55,0.08);
+      box-shadow: 0 0 45px rgba(0,0,0,0.7);
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 22px;
+      gap: 20px;
     }
 
     .avatar {
-      width: 210px;
+      width: 230px;
       height: 260px;
-      border-radius: 18px;
-      background: #111;
-      color: var(--text-muted);
-      border: 1px solid var(--gold);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 14px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 2px solid var(--accent);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.9);
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .name {
       font-size: 24px;
       font-weight: 700;
-      color: var(--gold);
       text-align: center;
     }
 
-    .availability {
-      padding: 6px 12px;
+    .tagline {
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 4px;
+      width: 100%;
+    }
+
+    .badge {
       border-radius: 999px;
-      border: 1px solid var(--gold);
-      color: var(--gold);
+      border: 1px solid var(--accent);
+      background: var(--chip-bg);
+      padding: 8px 14px;
       font-size: 12px;
       text-align: center;
-      line-height: 1.4;
+      color: var(--accent);
     }
 
     .socials {
       display: flex;
       gap: 10px;
+      margin-top: 6px;
     }
 
     .social-btn {
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      border: 1px solid var(--gold);
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
       display: flex;
-      justify-content: center;
       align-items: center;
-      color: var(--gold);
-      font-weight: bold;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
       text-decoration: none;
-      transition: 0.2s;
-      background: #111;
+      background: #020617;
+      transition: 0.18s ease;
     }
 
     .social-btn:hover {
-      background: var(--gold);
-      color: #000;
-      transform: scale(1.08);
+      background: var(--accent);
+      color: #020617;
+      transform: translateY(-1px) scale(1.05);
+      box-shadow: 0 10px 22px rgba(34,197,94,0.28);
     }
 
-    .btn-row {
-      display: flex;
+    .contact-block {
       width: 100%;
-      gap: 12px;
+      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
     }
 
-    .btn {
-      flex: 1;
-      padding: 10px;
+    .contact-chip {
       border-radius: 999px;
-      border: 1px solid var(--gold);
+      border: 1px solid var(--border);
+      background: #020617;
+      padding: 10px 16px;
+      font-size: 13px;
+      color: var(--text-main);
+      text-align: center;
+    }
+
+    .contact-link {
+      border-radius: 999px;
+      border: none;
+      background: var(--accent);
+      padding: 10px 16px;
+      font-size: 13px;
+      color: #020617;
       text-align: center;
       text-decoration: none;
-      color: var(--gold);
-      background: #111;
-      transition: 0.2s;
-      font-size: 13px;
+      font-weight: 600;
+      transition: 0.16s ease;
     }
 
-    .btn:hover {
-      background: var(--gold);
-      color: #000;
+    .contact-link.secondary {
+      background: #020617;
+      border: 1px solid var(--accent);
+      color: var(--accent);
     }
 
-    .btn-primary {
-      background: var(--gold);
-      color: #000;
-      border: none;
+    .contact-link:hover {
+      filter: brightness(1.07);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 22px rgba(34,197,94,0.28);
     }
 
-    .btn-primary:hover {
-      opacity: 0.85;
-    }
+    /* RIGHT MAIN CONTENT */
 
-    /* MAIN SECTION */
     .main {
       display: flex;
       flex-direction: column;
-      gap: 30px;
+      gap: 24px;
     }
 
     .hero {
-      background: #0a0a0a;
-      border: 1px solid #111;
-      border-radius: 22px;
-      padding: 30px;
-      box-shadow: 0 0 35px rgba(212,175,55,0.06);
+      background: linear-gradient(135deg, #020c1a, #020617);
+      border-radius: 24px;
+      padding: 26px 26px 24px;
+      border: 1px solid var(--border);
+      box-shadow: 0 0 45px rgba(0,0,0,0.8);
+    }
+
+    .hero-kicker {
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
     }
 
     .hero-title {
-      font-size: 42px;
+      font-size: 36px;
       font-weight: 800;
       line-height: 1.15;
     }
 
     .accent {
-      color: var(--gold);
+      color: var(--accent);
     }
 
-    .hero-text {
-      margin-top: 18px;
+    .hero-sub {
+      margin-top: 14px;
       font-size: 16px;
       color: var(--text-muted);
-      max-width: 650px;
-      line-height: 1.55;
+      max-width: 740px;
+      line-height: 1.6;
     }
 
     .hero-list {
       margin-top: 12px;
-      color: var(--text-muted);
+      padding-left: 18px;
       font-size: 14px;
-      list-style: disc;
-      margin-left: 20px;
+      color: var(--text-muted);
+    }
+
+    .hero-list li {
+      margin-bottom: 4px;
     }
 
     .stats {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
-      margin-top: 20px;
+      margin-top: 18px;
     }
 
     .stat-card {
-      background: var(--card);
-      padding: 16px;
+      background: #020617;
       border-radius: 16px;
       border: 1px solid var(--border);
-      min-width: 160px;
+      padding: 14px 16px;
       flex: 1;
+      min-width: 180px;
     }
 
     .stat-num {
-      font-size: 26px;
+      font-size: 22px;
       font-weight: 700;
-      color: var(--gold);
+      color: var(--accent);
+      margin-bottom: 2px;
     }
 
     .stat-label {
@@ -211,34 +257,42 @@
       color: var(--text-muted);
     }
 
+    .section {
+      background: var(--bg-elevated);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      padding: 18px 20px;
+    }
+
     .section-title {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 700;
-      color: var(--gold);
       margin-bottom: 10px;
     }
 
     .pills {
       display: flex;
-      gap: 10px;
       flex-wrap: wrap;
+      gap: 10px;
     }
 
     .pill {
-      padding: 8px 14px;
+      padding: 7px 14px;
       border-radius: 999px;
-      background: #0d0d0d;
-      border: 1px solid var(--gold);
-      font-size: 13px;
-      color: var(--gold);
+      border: 1px solid var(--accent-soft);
+      background: #020617;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .pill.strong {
+      border-color: var(--accent);
+      color: var(--accent);
     }
 
     @media (max-width: 900px) {
       .container {
         grid-template-columns: 1fr;
-      }
-      .hero-title {
-        font-size: 32px;
       }
     }
   </style>
@@ -246,105 +300,105 @@
 
 <body>
   <div class="container">
-
-    <!-- LEFT PROFILE CARD -->
+    <!-- LEFT PROFILE -->
     <div class="profile-card">
-    <div class="avatar">
-  <img src="https://github.com/focam3-blip/fode-portfolio/raw/main/lined%20in.jpg" 
-       style="width:100%; height:100%; object-fit:cover; border-radius:16px;">
-</div>
-
+      <div class="avatar">
+        <img src="https://github.com/focam3-blip/fode-portfolio/raw/main/lined%20in.jpg" alt="Fode Camara headshot" />
+      </div>
 
       <div class="name">Fode Camara</div>
 
-      <div class="availability">
-        Finance Major & Minor Information Systems Sciences <br>
-           Morgan State University — Sophomore
+      <div class="tagline">
+        Finance major with a minor in Information Systems Sciences<br />
+        Morgan State University — Sophomore
       </div>
+
+      <div class="badge-row">
+        <div class="badge">Stock & Crypto Market Analyst</div>
+        <div class="badge">Treasurer — The Red Foundation (Non-Profit)</div>
+      </div>
+
       <div class="socials">
-<a href="https://www.instagram.com/theredfoundationproject?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
-   class="social-btn" target="_blank">IG</a>
-    <a href="https://www.linkedin.com/in/fodecamara/" 
-   class="social-btn" target="_blank">IN</a>
- </div>
-     <div class="btn-row" style="flex-direction: column; gap: 8px;">
-  <div class="btn" style="cursor: default;">
-    Phone: 202-853-8473
-  </div>
+        <a href="https://www.instagram.com/theredfoundationproject?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-btn" target="_blank">IG</a>
+        <a href="https://www.linkedin.com/in/fodecamara/" class="social-btn" target="_blank">IN</a>
+      </div>
 
-  <a class="btn btn-primary" href="mailto:focam3@morgan.edu">
-    School Email: focam3@morgan.edu
-  </a>
+      <div class="contact-block">
+        <div class="contact-chip">Phone: 202-853-8473</div>
 
-  <a class="btn" href="mailto:fodecyber@gmail.com">
-    Professional Email: fodecyber@gmail.com
-  </a>
-</div>
- 
+        <a class="contact-link" href="mailto:focam3@morgan.edu">
+          School Email: focam3@morgan.edu
+        </a>
 
-    <!-- MAIN RIGHT SIDE -->
+        <a class="contact-link secondary" href="mailto:fodecyber@gmail.com">
+          Professional Email: fodecyber@gmail.com
+        </a>
+      </div>
+    </div>
+
+    <!-- RIGHT MAIN CONTENT -->
     <div class="main">
-
       <div class="hero">
+        <div class="hero-kicker">Markets • Technology • Analysis</div>
+
         <h1 class="hero-title">
-          I’m <span class="accent">Fode Camara</span>,<br>
-          Finance Major with a minor in Information System Sciences.
+          I’m <span class="accent">Fode Camara</span>,<br />
+          Finance Major & Market Analyst.
         </h1>
 
-        <p class="hero-text">
-          I’m a sophomore Finance major with a minor in Information Systems Sciences at Morgan State University,
-          born and raised in Prince George’s County, Maryland. I specialize in digital assets,
-          financial modeling, valuation, and on-chain market analysis — blending hands-on trading
-          experience with strong academic training. My goal is to turn complex data into clear,
-          profitable, and actionable insight.
+        <p class="hero-sub">
+          I’m a Finance major with a minor in Information Systems Sciences at Morgan State University,
+          born and raised in Prince George’s County, Maryland. I analyze both <span class="accent">traditional
+          equities</span> and <span class="accent">crypto markets</span>, blending on-chain activity, price
+          action, and fundamental research. My focus is turning complex market data into clear, actionable
+          insights for long-term growth and short-term trading opportunities.
         </p>
 
         <ul class="hero-list">
-          <li>Honors Finance major at Morgan State University</li>
-          <li>Born and raised in Prince George’s County, Maryland</li>
-          <li>Treasurer of The Red Foundation (Non-Profit)</li>
-          <li> Stock market analyst & crypto market analyst</li>
+          <li>Honors Finance student with an Information Systems Sciences minor</li>
+          <li>Stock & crypto market analyst with experience on Solana and U.S. equities</li>
+          <li>Treasurer of The Red Foundation, serving Baltimore and PG County communities</li>
+          <li>Passionate about combining markets, data, and technology to build better decisions</li>
         </ul>
 
         <div class="stats">
           <div class="stat-card">
-            <div class="stat-num">30K+</div>
-            <div class="stat-label">On-chain trading profits generated</div>
+            <div class="stat-num">30K+ </div>
+            <div class="stat-label">Realized trading profits across crypto & equities.</div>
           </div>
           <div class="stat-card">
-            <div class="stat-num">3.9+</div>
-            <div class="stat-label">GPA across Finance & IS coursework</div>
+            <div class="stat-num">3.9+ GPA</div>
+            <div class="stat-label">Coursework in Finance, Accounting, and Information Systems.</div>
           </div>
           <div class="stat-card">
-            <div class="stat-num">10+</div>
-            <div class="stat-label">Projects in crypto, markets, finance & security</div>
+            <div class="stat-num">10+ Projects</div>
+            <div class="stat-label">Research, valuation work, and market-focused initiatives.</div>
           </div>
         </div>
       </div>
 
-      <!-- SECTIONS -->
       <div class="section">
         <div class="section-title">Career Highlights</div>
         <div class="pills">
-          <div class="pill">KPMG Embark Technology Intern (Future)</div>
+          <div class="pill strong">KPMG Embark Technology Intern (Future)</div>
           <div class="pill">MLT Career Prep Fellow</div>
-          <div class="pill">Honors College Scholar — Morgan State</div>
+          <div class="pill">Honors College — Morgan State University</div>
           <div class="pill">Treasurer — The Red Foundation (Non-Profit)</div>
           <div class="pill">PG County Raised</div>
         </div>
       </div>
 
       <div class="section">
-        <div class="section-title">Areas of Focus</div>
+        <div class="section-title">Market & Tech Focus</div>
         <div class="pills">
-          <div class="pill">Digital Asset Research</div>
+          <div class="pill strong">Equity & Crypto Market Analysis</div>
+          <div class="pill">Solana Ecosystem Research</div>
+          <div class="pill">Options & Risk Management</div>
           <div class="pill">Financial Modeling & Valuation</div>
-          <div class="pill">Solana Ecosystem Analysis</div>
-          <div class="pill">Options & Crypto Trading</div>
-          <div class="pill">Information Systems & Cybersecurity</div>
+          <div class="pill">Information Systems & Data-Driven Decisions</div>
+          <div class="pill">Blockchain & Digital Asset Strategy</div>
         </div>
       </div>
-
     </div>
   </div>
 </body>
