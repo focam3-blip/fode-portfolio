@@ -7,10 +7,10 @@
 
   <style>
     :root {
-      --bg: #020617;             /* deep navy */
+      --bg: #020617;
       --bg-elevated: #020b19;
       --card: #020e20;
-      --accent: #22c55e;         /* stock green */
+      --accent: #22c55e;
       --accent-soft: rgba(34,197,94,0.16);
       --border: #0b1727;
       --text-main: #f9fafb;
@@ -22,8 +22,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     body {
@@ -70,7 +69,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
     }
 
     .name {
@@ -90,7 +88,6 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
-      margin-top: 4px;
       width: 100%;
     }
 
@@ -107,7 +104,6 @@
     .socials {
       display: flex;
       gap: 10px;
-      margin-top: 6px;
     }
 
     .social-btn {
@@ -147,13 +143,11 @@
       background: #020617;
       padding: 10px 16px;
       font-size: 13px;
-      color: var(--text-main);
       text-align: center;
     }
 
     .contact-link {
       border-radius: 999px;
-      border: none;
       background: var(--accent);
       padding: 10px 16px;
       font-size: 13px;
@@ -161,7 +155,6 @@
       text-align: center;
       text-decoration: none;
       font-weight: 600;
-      transition: 0.16s ease;
     }
 
     .contact-link.secondary {
@@ -169,14 +162,6 @@
       border: 1px solid var(--accent);
       color: var(--accent);
     }
-
-    .contact-link:hover {
-      filter: brightness(1.07);
-      transform: translateY(-1px);
-      box-shadow: 0 10px 22px rgba(34,197,94,0.28);
-    }
-
-    /* RIGHT MAIN CONTENT */
 
     .main {
       display: flex;
@@ -187,7 +172,7 @@
     .hero {
       background: linear-gradient(135deg, #020c1a, #020617);
       border-radius: 24px;
-      padding: 26px 26px 24px;
+      padding: 26px;
       border: 1px solid var(--border);
       box-shadow: 0 0 45px rgba(0,0,0,0.8);
     }
@@ -206,9 +191,7 @@
       line-height: 1.15;
     }
 
-    .accent {
-      color: var(--accent);
-    }
+    .accent { color: var(--accent); }
 
     .hero-sub {
       margin-top: 14px;
@@ -222,11 +205,11 @@
       margin-top: 12px;
       padding-left: 18px;
       font-size: 14px;
-      color: var(--text-muted);
     }
 
     .hero-list li {
       margin-bottom: 4px;
+      color: var(--text-muted);
     }
 
     .stats {
@@ -249,7 +232,6 @@
       font-size: 22px;
       font-weight: 700;
       color: var(--accent);
-      margin-bottom: 2px;
     }
 
     .stat-label {
@@ -290,55 +272,91 @@
       color: var(--accent);
     }
 
-    @media (max-width: 900px) {
-      .container {
-        grid-template-columns: 1fr;
-      }
+    .projects-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
     }
+
+    /* VIDEO + NON-PROFIT SECTION */
+    .video-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .video-text {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #000;
+      box-shadow: 0 14px 32px rgba(0,0,0,0.6);
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    @media (max-width: 900px) {
+      .container { grid-template-columns: 1fr; }
+      .video-grid { grid-template-columns: 1fr; }
+    }
+
   </style>
 </head>
 
 <body>
   <div class="container">
-    <!-- LEFT PROFILE -->
+
+    <!-- LEFT SIDEBAR -->
     <div class="profile-card">
       <div class="avatar">
-        <img src="https://github.com/focam3-blip/fode-portfolio/raw/main/lined%20in.jpg" alt="Fode Camara headshot" />
+        <img src="https://github.com/focam3-blip/fode-portfolio/raw/main/lined%20in.jpg" />
       </div>
 
       <div class="name">Fode Camara</div>
 
       <div class="tagline">
-        Finance major with a minor in Information Systems Sciences<br />
+        Finance major with a minor in Information Systems Sciences<br>
         Morgan State University — Sophomore
       </div>
 
       <div class="badge-row">
-          <div class="badge">Private Equity Intern — Prominent Strategic Capital</div>
+        <div class="badge">Private Equity Intern — Prominent Strategic Capital</div>
+        <div class="badge">KPMG Embark Intern (2026–2027)</div>
         <div class="badge">Stock & Crypto Market Analyst</div>
-        <div class="badge">Treasurer — The Red Foundation (Non-Profit)</div>
+        <div class="badge">Treasurer — The Red Foundation</div>
       </div>
 
       <div class="socials">
-        <a href="https://www.instagram.com/theredfoundationproject?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="social-btn" target="_blank">IG</a>
-        <a href="https://www.linkedin.com/in/fodecamara/" class="social-btn" target="_blank">IN</a>
+        <a href="https://www.instagram.com/theredfoundationproject" class="social-btn">IG</a>
+        <a href="https://www.linkedin.com/in/fodecamara/" class="social-btn">IN</a>
       </div>
 
       <div class="contact-block">
         <div class="contact-chip">Phone: 202-853-8473</div>
-
-        <a class="contact-link" href="mailto:focam3@morgan.edu">
-          School Email: focam3@morgan.edu
-        </a>
-
-        <a class="contact-link secondary" href="mailto:fodecyber@gmail.com">
-          Professional Email: fodecyber@gmail.com
-        </a>
+        <a class="contact-link" href="mailto:focam3@morgan.edu">School Email: focam3@morgan.edu</a>
+        <a class="contact-link secondary" href="mailto:fodecyber@gmail.com">Professional Email: fodecyber@gmail.com</a>
       </div>
     </div>
 
-    <!-- RIGHT MAIN CONTENT -->
+    <!-- MAIN CONTENT -->
     <div class="main">
+
       <div class="hero">
         <div class="hero-kicker">Markets • Technology • Analysis</div>
 
@@ -349,57 +367,106 @@
 
         <p class="hero-sub">
           I’m a Finance major with a minor in Information Systems Sciences at Morgan State University,
-          born and raised in Prince George’s County, Maryland. I analyze both <span class="accent">traditional
-          equities</span> and <span class="accent">crypto markets</span>, blending on-chain activity, price
-          action, and fundamental research. My focus is turning complex market data into clear, actionable
-          insights for long-term growth and short-term trading opportunities.
+          raised in Prince George’s County, Maryland. I analyze both <span class="accent">traditional equities</span> and
+          <span class="accent">crypto markets</span>, blending fundamentals, price action, and on-chain activity.
+          <br><br>
+          I am a <span class="accent">Private Equity Intern at Prominent Strategic Capital</span> and a 
+          <span class="accent">KPMG Embark Intern (2026–2027)</span>, expanding my experience in finance,
+          advisory, and data-driven decision-making.
         </p>
 
         <ul class="hero-list">
-          <li>Honors Finance student with an Information Systems Sciences minor</li>
-          <li>Stock & crypto market analyst with experience on Solana and U.S. equities</li>
-          <li>Treasurer of The Red Foundation, serving Baltimore and PG County communities</li>
-          <li>Passionate about combining markets, data, and technology to build better decisions</li>
+          <li>Honors Finance student with ISS minor</li>
+          <li>Stock & crypto analyst (U.S. equities + Solana ecosystem)</li>
+          <li>Treasurer of The Red Foundation</li>
+          <li>Driven by markets, data, and financial systems</li>
         </ul>
 
         <div class="stats">
           <div class="stat-card">
-            <div class="stat-num">30K+ </div>
-            <div class="stat-label">Realized trading profits across crypto & equities.</div>
+            <div class="stat-num">30K+</div>
+            <div class="stat-label">Trading profits across crypto & equities.</div>
           </div>
           <div class="stat-card">
             <div class="stat-num">3.9+ GPA</div>
-            <div class="stat-label">Coursework in Finance, Accounting, and Information Systems.</div>
+            <div class="stat-label">Finance, Accounting & Information Systems coursework.</div>
           </div>
           <div class="stat-card">
             <div class="stat-num">10+ Projects</div>
-            <div class="stat-label">Research, valuation work, and market-focused initiatives.</div>
+            <div class="stat-label">Market & tech research, modeling, and analysis.</div>
           </div>
         </div>
       </div>
 
+      <!-- CAREER HIGHLIGHTS -->
       <div class="section">
         <div class="section-title">Career Highlights</div>
         <div class="pills">
-          <div class="pill strong">KPMG Embark Technology Intern (Future)</div>
+          <div class="pill strong">Private Equity Intern — Prominent Strategic Capital</div>
+          <div class="pill strong">KPMG Embark Intern (2026–2027)</div>
           <div class="pill">MLT Career Prep Fellow</div>
-          <div class="pill">Honors College — Morgan State University</div>
-          <div class="pill">Treasurer — The Red Foundation (Non-Profit)</div>
+          <div class="pill">Honors College — Morgan State</div>
+          <div class="pill">Treasurer — The Red Foundation</div>
           <div class="pill">PG County Raised</div>
         </div>
       </div>
-  <div class="section">
-       <div class="pills">
-  <div class="pill strong">Private Equity Intern — Prominent Strategic Capital</div>
-  <div class="pill strong">KPMG Embark Intern (2026–2027)</div>
-  <div class="pill">MLT Career Prep Fellow</div>
-  <div class="pill">Honors College — Morgan State University</div>
-  <div class="pill">Treasurer — The Red Foundation (Non-Profit)</div>
-  <div class="pill">PG County Raised</div>
-</div>
+
+      <!-- PROJECTS -->
+      <div class="section">
+        <div class="section-title">Projects</div>
+
+        <div class="projects-list">
+
+          <!-- SOLANA PROJECT WITH IMAGE -->
+          <div class="project-item" style="display:flex; gap:20px; align-items:center;">
+            <img 
+              src="https://raw.githubusercontent.com/focam3-blip/fode-portfolio/main/solana-cover.png"
+              style="width:200px; height:130px; object-fit:cover; border-radius:12px; border:1px solid var(--border);"
+            />
+
+            <div>
+              <div class="project-item-title">Solana Investment Thesis & Valuation Model</div>
+
+              <div style="color:var(--text-muted); font-size:14px; max-width:480px;">
+                Institutional-grade analysis including scenario modeling, compounding valuation,
+                and long-term ecosystem forecasting.
+              </div>
+
+              <div style="margin-top:6px;">
+                <a href="https://github.com/focam3-blip/solana-investment-thesis" class="project-link" target="_blank">
+                  View Full Thesis →
+                </a>
+              </div>
+            </div>
+          </div>
 
         </div>
       </div>
+
+      <!-- NON-PROFIT SECTION -->
+      <div class="section">
+        <div class="section-title">The Red Foundation (Non-Profit)</div>
+
+        <div class="video-grid">
+          <div class="video-text">
+            The Red Foundation is my student-led non-profit organization serving families
+            in Baltimore and Prince George’s County. We donate hoodies, jackets, canned foods,
+            and essential clothing items to those in need. As Treasurer, I lead budgeting,
+            fundraising strategy, and donation operations.
+            <br><br>
+            Watch this video highlighting our mission and community impact.
+          </div>
+
+          <div class="video-wrapper">
+            <iframe 
+              src="https://drive.google.com/file/d/1-hwKUd3A5oD12DU1teI38lqB23RxKpYk/preview"
+              allow="autoplay"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </body>
