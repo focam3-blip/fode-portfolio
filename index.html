@@ -1,0 +1,340 @@
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fode Camara | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      --black: #000000;
+      --bg: #050505;
+      --card: #0d0d0d;
+      --gold: #d4af37;
+      --text-main: #ffffff;
+      --text-muted: #cccccc;
+      --border: #1a1a1a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", system-ui, sans-serif;
+    }
+
+    body {
+      background: var(--black);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+      color: var(--text-main);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      display: grid;
+      grid-template-columns: 330px 1fr;
+      gap: 30px;
+    }
+
+    /* LEFT PROFILE CARD */
+    .profile-card {
+      background: var(--card);
+      border-radius: 20px;
+      padding: 24px;
+      border: 1px solid var(--border);
+      box-shadow: 0 0 25px rgba(212,175,55,0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .avatar {
+      width: 210px;
+      height: 260px;
+      border-radius: 18px;
+      background: #111;
+      color: var(--text-muted);
+      border: 1px solid var(--gold);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .name {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--gold);
+      text-align: center;
+    }
+
+    .availability {
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 12px;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .socials {
+      display: flex;
+      gap: 10px;
+    }
+
+    .social-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      border: 1px solid var(--gold);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--gold);
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.2s;
+      background: #111;
+    }
+
+    .social-btn:hover {
+      background: var(--gold);
+      color: #000;
+      transform: scale(1.08);
+    }
+
+    .btn-row {
+      display: flex;
+      width: 100%;
+      gap: 12px;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 10px;
+      border-radius: 999px;
+      border: 1px solid var(--gold);
+      text-align: center;
+      text-decoration: none;
+      color: var(--gold);
+      background: #111;
+      transition: 0.2s;
+      font-size: 13px;
+    }
+
+    .btn:hover {
+      background: var(--gold);
+      color: #000;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #000;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.85;
+    }
+
+    /* MAIN SECTION */
+    .main {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .hero {
+      background: #0a0a0a;
+      border: 1px solid #111;
+      border-radius: 22px;
+      padding: 30px;
+      box-shadow: 0 0 35px rgba(212,175,55,0.06);
+    }
+
+    .hero-title {
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1.15;
+    }
+
+    .accent {
+      color: var(--gold);
+    }
+
+    .hero-text {
+      margin-top: 18px;
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 650px;
+      line-height: 1.55;
+    }
+
+    .hero-list {
+      margin-top: 12px;
+      color: var(--text-muted);
+      font-size: 14px;
+      list-style: disc;
+      margin-left: 20px;
+    }
+
+    .stats {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .stat-card {
+      background: var(--card);
+      padding: 16px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      min-width: 160px;
+      flex: 1;
+    }
+
+    .stat-num {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .pills {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #0d0d0d;
+      border: 1px solid var(--gold);
+      font-size: 13px;
+      color: var(--gold);
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+      .hero-title {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <!-- LEFT PROFILE CARD -->
+    <div class="profile-card">
+      <div class="avatar">Upload Photo Here</div>
+
+      <div class="name">Fode Camara</div>
+
+      <div class="availability">
+        Finance & Information Systems Major<br>
+        Morgan State University — Sophomore
+      </div>
+
+      <div class="socials">
+        <a href="#" class="social-btn">IG</a>
+        <a href="#" class="social-btn">X</a>
+        <a href="#" class="social-btn">IN</a>
+      </div>
+
+      <div class="btn-row">
+        <a class="btn" href="#">Download CV</a>
+        <a class="btn btn-primary" href="mailto:focam3@morgan.edu">Contact Me</a>
+      </div>
+    </div>
+
+    <!-- MAIN RIGHT SIDE -->
+    <div class="main">
+
+      <div class="hero">
+        <h1 class="hero-title">
+          I’m <span class="accent">Fode Camara</span>,<br>
+          Finance & Information Systems Major.
+        </h1>
+
+        <p class="hero-text">
+          I’m a sophomore Finance and Information Systems major at Morgan State University,
+          born and raised in Prince George’s County, Maryland. I specialize in digital assets,
+          financial modeling, valuation, and on-chain market analysis — blending hands-on trading
+          experience with strong academic training. My goal is to turn complex data into clear,
+          profitable, and actionable insight.
+        </p>
+
+        <ul class="hero-list">
+          <li>Honors Finance & Information Systems major at Morgan State University</li>
+          <li>Born and raised in Prince George’s County, Maryland</li>
+          <li>Treasurer of The Red Foundation (Non-Profit)</li>
+          <li>Active Solana & crypto market analyst</li>
+        </ul>
+
+        <div class="stats">
+          <div class="stat-card">
+            <div class="stat-num">30K+</div>
+            <div class="stat-label">On-chain trading profits generated</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">3.9+</div>
+            <div class="stat-label">GPA across Finance & IS coursework</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">10+</div>
+            <div class="stat-label">Projects in crypto, markets, finance & security</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTIONS -->
+      <div class="section">
+        <div class="section-title">Career Highlights</div>
+        <div class="pills">
+          <div class="pill">KPMG Embark Technology Intern (Future)</div>
+          <div class="pill">MLT Career Prep Fellow</div>
+          <div class="pill">Honors College Scholar — Morgan State</div>
+          <div class="pill">Treasurer — The Red Foundation (Non-Profit)</div>
+          <div class="pill">PG County Raised</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Areas of Focus</div>
+        <div class="pills">
+          <div class="pill">Digital Asset Research</div>
+          <div class="pill">Financial Modeling & Valuation</div>
+          <div class="pill">Solana Ecosystem Analysis</div>
+          <div class="pill">Options & Crypto Trading</div>
+          <div class="pill">Information Systems & Cybersecurity</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
